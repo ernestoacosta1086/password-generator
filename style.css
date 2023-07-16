@@ -155,17 +155,9 @@ main {
   background-color: var(--color-neutral-800);
 }
 
-#copy-icon :active {
+#copy-icon svg path {
   fill: var(--color-neutral-200);
 }
-
-#copy-icon:active svg path {
-  fill: var(--color-neutral-200);
-}
-
-/* #copied-icon div :active {
-  fill: var(--color-neutral-200);
-} */
 
 .options-form {
   display: flex;
@@ -261,10 +253,16 @@ main {
 
 .generate-button:active {
   background-color: var(--color-neutral-800);
-  /* border: 2px solid var(--color-green); */
   color: var(--color-green);
+  cursor: auto;
 }
 
 .generate-button:active svg path {
   fill: var(--color-green);
+}
+
+.generate-button--active {
+  background-color: var(--color-neutral-800);
+  color: var(--color-green);
+  cursor: auto;
 }
