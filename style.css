@@ -1,0 +1,270 @@
+/* General styles */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap');
+
+:root {
+  --color-neutral-200: #e6e5ea;
+  --color-neutral-400: #817d92;
+  --color-neutral-800: #24232c;
+  --color-neutral-900: #18171f;
+
+  --color-background-900: #070724;
+
+  --color-red: #f64a4a;
+  --color-green: #a4ffaf;
+  --color-orange: #fb7c58;
+  --color-yellow: #f8cd65;
+
+  --font-family: 'JetBrains Mono', monospace;
+
+  --font-weight-bold-700: 700;
+
+  --font-size-small: 1.1rem;
+  --font-size-medium: 1.6rem;
+  --font-size-large: 2rem;
+
+  --line-height-small: 1.44rem;
+  --line-height-medium: 1.98rem;
+  --line-height-large: 2.69rem;
+}
+
+/*CSS Reset
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-family);
+  font-size: var(--font-size-medium);
+  line-height: var(--line-height-medium);
+  background-color: var(--color-neutral-900);
+  color: var(--color-neutral-200);
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Specific styles */
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(400px, 50%, 600px);
+}
+
+.title {
+  font-size: var(--font-size-small);
+  color: var(--color-neutral-400);
+  text-align: center;
+  margin: 2rem;
+}
+
+.password {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+
+  font-size: var(--font-size-large);
+  background-color: var(--color-neutral-800);
+}
+
+#password-value {
+  border: none;
+  width: 65%;
+  background-color: transparent;
+  outline: none;
+  color: var(--color-neutral-200);
+  font-size: var(--font-size-medium);
+}
+
+.copied {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: var(--font-size-small);
+}
+
+.copied-word {
+  text-transform: uppercase;
+  color: var(--color-green);
+  display: none;
+}
+
+.copied-word--active {
+  display: block;
+}
+
+#copy-icon {
+  cursor: pointer;
+  border: none;
+  background-color: var(--color-neutral-800);
+}
+
+#copy-icon :active {
+  fill: var(--color-neutral-200);
+}
+
+#copy-icon:active svg path {
+  fill: var(--color-neutral-200);
+}
+
+/* #copied-icon div :active {
+  fill: var(--color-neutral-200);
+} */
+
+.options-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--color-neutral-800);
+  padding: 2rem;
+}
+
+.characters-amount input {
+  width: 100%;
+  accent-color: var(--color-green);
+  cursor: pointer;
+  background-color: var(--color-neutral-900);
+}
+
+.lenght-character {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lenght-character:first-child {
+  font-size: var(--font-size-small);
+}
+.lenght-character span:last-child {
+  font-size: var(--font-size-large);
+  color: var(--color-green);
+}
+
+.conditions {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-small);
+}
+
+.custom-checkbox {
+  cursor: pointer;
+  accent-color: var(--color-green);
+}
+
+.strengh {
+  font-size: var(--font-size-small);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  margin: 1rem 0;
+  background-color: var(--color-neutral-900);
+  text-transform: uppercase;
+}
+
+.strengh > span {
+  color: var(--color-neutral-400);
+}
+
+.strengh :last-child {
+  font-size: var(--font-size-medium);
+}
+
+.strengh__bars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.strengh__bars span {
+  margin-right: 0.5rem;
+}
+
+.bar {
+  margin: 0.2rem;
+  width: 0.6rem;
+  height: 1.6rem;
+  background-color: var(--color-neutral-800);
+  border: 1px solid var(--color-neutral-200);
+}
+
+.bar--active {
+  background-color: var(--color-yellow);
+}
+
+.generate-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: var(--font-size-small);
+  background-color: var(--color-green);
+  padding: 0.5rem 0;
+  border: 2px solid var(--color-green);
+  text-transform: uppercase;
+}
+
+.generate-button:active {
+  background-color: var(--color-neutral-800);
+  /* border: 2px solid var(--color-green); */
+  color: var(--color-green);
+}
+
+.generate-button:active svg path {
+  fill: var(--color-green);
+}
